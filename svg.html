@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Nikith Rachakonda - SVG</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/CSS/styles.css">
+        <link rel="shortcut icon" type="image/svg" href="/Pictures/death_star.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body style="background-image: url(/Pictures/4880206.jpg); background-position: center; background-size: cover; background-size: 100%;">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <!-- <script src="" async defer></script> -->
+        <sidenav>
+            <img src= "/Pictures/uiclogo.png" alt="UIC logo" style="width: 85%;">
+            <a href="index.html">Home</a>
+            <a href="critique.html">Critique</a>
+            <a href="svg.html">SVG</a>
+            <a href="credits.html">Credits</a>
+        </sidenav>
+        <main>
+            <h1 style = "text-align: center;"> SVG </h1>
+            <p> Click on the circle and rectangle to stop/start motion. Click on the star to change color. Hover over shapes at the end to change their color. </p>
+            <svg width = "2000" height = "150" id="stop">
+                <circle r="30" fill="green">
+                    <animateMotion dur="10s" repeatCount="indefinite"
+                    path="M20,150 L200,10 L500,150" />
+            </circle>
+            </svg>
+            <svg id=star width="4cm" height="4cm" viewBox="0 0 700 400">
+                <script>
+                </script>
+                <polygon fill="blue" stroke="black" stroke-width="10" 
+                          points="350,75  379,161 469,161 397,215
+                                  423,301 350,250 277,301 303,215
+                                  231,161 321,161" id = "a1" onclick="changePoly(event)"/>
+              </svg>
+              <svg id="tri1" width="200" height="200">
+                <rect width="300" height="300" fill="purple">
+                    <animate attributeName="x" from="0" to="300" dur="3s" fill="freeze" repeatCount="indefinite"></animate>
+                </rect>
+            </svg>
+            <svg viewbox="0 0 100 100" class="svg3">
+                <g id="buttons">
+                  <rect id="center" x="25" y="25" height="50" width="50" />
+                  <polygon id="top" points="0,0 100,0 75,25 25,25" />
+                  <polygon id="right" points="100,0 75,25 75,75 100,100" />
+                  <polygon id="bottom" points="0,100 25,75 75,75 100,100" />
+                  <polygon id="left" points="0,0 25,25 25,75 0,100" />
+                </g>
+              </svg>
+              <script>
+                        function changePoly(){
+                            if(document.getElementById("a1").getAttributeNS(null,"fill")=='blue'){
+                            document.getElementById("a1").setAttributeNS(null,"fill","red");
+                        }
+                        else{
+                            document.getElementById("a1").setAttributeNS(null,"fill","blue");
+                        }
+                    }
+                                            window.onload = () => {
+                            const svg1 = document.getElementById("star");
+                            svg1.onclick = (evt) => {
+                                if (svg1.animationsPaused()) {
+                                    svg1.unpauseAnimations();
+                                }
+                                else {
+                                    svg1.pauseAnimations();
+                                }
+                            };
+                            const svg2 = document.getElementById("stop");
+                            svg2.onclick = (evt) => {
+                                if (svg2.animationsPaused()) {
+                                    svg2.unpauseAnimations();
+                                }
+                                else {
+                                    svg2.pauseAnimations();
+                                }
+                            };
+                            const svg3 = document.getElementById("tri1");
+                            svg3.onclick = (evt) => {
+                                if (svg3.animationsPaused()) {
+                                    svg3.unpauseAnimations();
+                                }
+                                else {
+                                    svg3.pauseAnimations();
+                                }
+                            };
+                        }
+          
+              </script>
+
+        </main>
+        
+    </body>
+</html>
